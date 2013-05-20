@@ -35,6 +35,11 @@
             this.tbxPhone = new System.Windows.Forms.TextBox();
             this.btngo = new System.Windows.Forms.Button();
             this.LVReort = new System.Windows.Forms.ListView();
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader2 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader3 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
+            this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +86,7 @@
             // 
             // btngo
             // 
-            this.btngo.Location = new System.Drawing.Point(266, 34);
+            this.btngo.Location = new System.Drawing.Point(258, 34);
             this.btngo.Name = "btngo";
             this.btngo.Size = new System.Drawing.Size(75, 23);
             this.btngo.TabIndex = 3;
@@ -91,6 +96,12 @@
             // 
             // LVReort
             // 
+            this.LVReort.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
             this.LVReort.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.LVReort.GridLines = true;
             this.LVReort.Location = new System.Drawing.Point(0, 59);
@@ -100,8 +111,30 @@
             this.LVReort.UseCompatibleStateImageBehavior = false;
             this.LVReort.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "目标地址";
+            this.columnHeader1.Width = 230;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "间隔";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "下一次";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "成功";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "失败";
+            // 
             // Main
             // 
+            this.AcceptButton = this.btngo;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 288);
@@ -118,6 +151,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SmsBomber";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -134,6 +168,11 @@
         private System.Windows.Forms.TextBox tbxPhone;
         private System.Windows.Forms.Button btngo;
         private System.Windows.Forms.ListView LVReort;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
     }
 }
 
