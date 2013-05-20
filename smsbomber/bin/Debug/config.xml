@@ -1,0 +1,14 @@
+<resource>
+  <target>
+    <url>http://reg.ztgame.com/mobilePhoneRegister?type=isPhoneRegister</url>
+    <interval>10</interval>
+    <method>POST</method>
+    <formname>phoneNum</formname>
+  </target>
+  <target>
+    <url>http://my.webluker.com/user/createSmsCode/?mobile=%mobile%</url>
+    <interval>10</interval>
+    <method>GET</method>
+    <formname>N/A</formname>
+  </target>
+</resource>
