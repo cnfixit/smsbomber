@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
+using System.Threading;
 
 namespace smsbomber
 {
@@ -28,7 +29,11 @@ namespace smsbomber
 
         private void btngo_Click(object sender, EventArgs e)
         {
-            if(
+            if(this.tbxPhone.Text.Length == 0)
+            {
+                MessageBox.Show("输入不能为空", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (!flag)
             {
                 //start
@@ -46,7 +51,21 @@ namespace smsbomber
         private void start()
         {
             this.loadconfig();
+
+            List<Thread> threads = new List<Thread>();
+
+            for(int i = 0;i < this.list.Count;i++)
+            {
+                Thread t = new Thread(new ParameterizedThreadStart(procedure));
+            }
         }
+
+
+        private void procedure(object obj)
+        {
+            
+        }
+
 
         private void Main_Load(object sender, EventArgs e)
         {

@@ -7,3 +7,12 @@ E:\Projects\csharp\smsbomber\smsbomber\obj\Debug\smsbomber.exe
 E:\Projects\csharp\smsbomber\smsbomber\obj\Debug\smsbomber.pdb
 E:\Projects\csharp\smsbomber\smsbomber\obj\Debug\smsbomber.Config.resources
 E:\Projects\csharp\smsbomber\smsbomber\obj\Debug\smsbomber.Main.resources
+D:\wx\projects\smsbomber\smsbomber\obj\Debug\smsbomber.exe
+D:\wx\projects\smsbomber\smsbomber\obj\Debug\smsbomber.pdb
+D:\wx\projects\smsbomber\smsbomber\obj\Debug\ResolveAssemblyReference.cache
+D:\wx\projects\smsbomber\smsbomber\obj\Debug\smsbomber.Config.resources
+D:\wx\projects\smsbomber\smsbomber\obj\Debug\smsbomber.Main.resources
+D:\wx\projects\smsbomber\smsbomber\obj\Debug\smsbomber.Properties.Resources.resources
+D:\wx\projects\smsbomber\smsbomber\obj\Debug\smsbomber.csproj.GenerateResource.Cache
+D:\wx\projects\smsbomber\smsbomber\bin\Debug\smsbomber.exe
+D:\wx\projects\smsbomber\smsbomber\bin\Debug\smsbomber.pdb

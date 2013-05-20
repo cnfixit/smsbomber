@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbxPhone = new System.Windows.Forms.TextBox();
             this.btngo = new System.Windows.Forms.Button();
+            this.LVReort = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,11 +89,23 @@
             this.btngo.UseVisualStyleBackColor = true;
             this.btngo.Click += new System.EventHandler(this.btngo_Click);
             // 
+            // LVReort
+            // 
+            this.LVReort.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.LVReort.GridLines = true;
+            this.LVReort.Location = new System.Drawing.Point(0, 59);
+            this.LVReort.Name = "LVReort";
+            this.LVReort.Size = new System.Drawing.Size(474, 229);
+            this.LVReort.TabIndex = 4;
+            this.LVReort.UseCompatibleStateImageBehavior = false;
+            this.LVReort.View = System.Windows.Forms.View.Details;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(474, 288);
+            this.Controls.Add(this.LVReort);
             this.Controls.Add(this.btngo);
             this.Controls.Add(this.tbxPhone);
             this.Controls.Add(this.label1);
@@ -120,6 +133,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxPhone;
         private System.Windows.Forms.Button btngo;
+        private System.Windows.Forms.ListView LVReort;
     }
 }
 
